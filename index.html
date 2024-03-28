@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title Here</title>
+    <style>
+        /* Animation for the fancy text */
+        @keyframes fancyAnimation {
+            0%, 100% {
+                color: #FF6347; /* Tomato */
+                transform: scale(1);
+            }
+            50% {
+                color: #4682B4; /* SteelBlue */
+                transform: scale(1.1);
+            }
+        }
+
+        .fancy-text {
+            font-size: 2em;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+            animation: fancyAnimation 2s infinite;
+        }
+
+        /* Styles for the video container to center the video on the page */
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fancy-text">You have been fooled by the security team on April 1st!</div>
+
+    <!-- Embed YouTube Video -->
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</body>
+</html>
