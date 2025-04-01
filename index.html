@@ -31,16 +31,50 @@
             text-align: center;
             margin: 20px 0;
         }
+
+        .play-button {
+            font-size: 1em;
+            padding: 10px 20px;
+            background-color: #4682B4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
 
     <div class="fancy-text">You have been fooled by the security team on April 1st!</div>
 
-    <!-- Embed YouTube Video -->
+    <!-- Video and Play Button -->
     <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="player"></div>
+        <button id="play-button" class="play-button">Click to Play Video</button>
     </div>
+
+    <!-- Load YouTube IFrame API -->
+    <script>
+        var tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '315',
+                width: '560',
+                videoId: 'dQw4w9WgXcQ'
+            });
+        }
+
+        document.getElementById('play-button').addEventListener('click', function () {
+            if (player && typeof player.playVideo === 'function') {
+                player.playVideo();
+            }
+        });
+    </script>
 
 </body>
 </html>
